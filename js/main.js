@@ -84,3 +84,9 @@ function confirmDate(numDaysOff){
       document.getElementById('employee-msg').style.display = "block";
     }
 }
+
+
+function confirmChoice(){
+  var selected = document.getElementById("admin-select").value;
+  
+}
