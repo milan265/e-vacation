@@ -10,7 +10,9 @@
                 "surname": "Admin",
                 "position": "",
                 "contractType": "",
-                "employmentDate": ""
+                "employmentDate": "",
+                "numDaysOffOld": 0,
+                "numDaysOff": 0
             },
             {
                 "id": 2,
@@ -21,7 +23,9 @@
                 "surname": "Peric",
                 "position": "Back-end developer",
                 "contractType": "stalno",
-                "employmentDate": "2019-05-01"
+                "employmentDate": "2019-05-01",
+                "numDaysOffOld": 1,
+                "numDaysOff": 20
             },
             {
                 "id": 3,
@@ -32,7 +36,9 @@
                 "surname": "Jovanovic",
                 "position": "Back-end developer",
                 "contractType": "stalno",
-                "employmentDate": "2020-02-13"
+                "employmentDate": "2020-02-13",
+                "numDaysOffOld": 0,
+                "numDaysOff": 0
             },
             {
                 "id": 4,
@@ -43,7 +49,9 @@
                 "surname": "Pekic",
                 "position": "Front-end developer",
                 "contractType": "odredjeno",
-                "employmentDate": "2020-10-07"
+                "employmentDate": "2020-10-07",
+                "numDaysOffOld": 0,
+                "numDaysOff": 0
             },
             {
                 "id": 5,
@@ -54,7 +62,9 @@
                 "surname": "Zoric",
                 "position": "Marketing",
                 "contractType": "stalno",
-                "employmentDate": "2020-09-22"
+                "employmentDate": "2020-09-22",
+                "numDaysOffOld": 0,
+                "numDaysOff": 0
             }
         ]
     ';
@@ -76,5 +86,14 @@
 
     $arrUsers = json_decode($jsonUsers);
     $arrRequest = json_decode($jsonRequest);
+
+    function getUserById($id){
+        global $arrUsers;
+        foreach($arrUsers as $user){
+            if($user->id == $id){
+               return $user; 
+            }
+        }
+    }
 
 ?>

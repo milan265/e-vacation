@@ -68,13 +68,108 @@ a{
 	display:none;
 }
 
-.message-border{
-	border:2px solid red;
-	transition:0.5s;
+  
+
+/*----------------------------------------------*/
+
+#profil{
+	padding-top: 100px;
+	padding-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 
+/*HEADER*/
+header{
+	width:100%;
+	background-color: #f7f7f7 ;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+header #header-content{
+	width:1300px;
+	height:100px;
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
 
-  
+#logout{
+	background-color: #4CAF50;
+  	color: white;
+	padding:8px 20px;
+	font-size:16px;
+  	border: none;
+  	cursor: pointer;
+	border-radius: 5px;
+}
 
+#logout:hover{
+    background-color:red;
+	color:white;
+	transition:background-color 0.5s ease;
+	transition:color 0.5s ease;
+}
+/*----------------------------------------------*/
+
+
+
+/*EMPLOYEE*/
+#employee-data{
+    padding-top: 100px;
+	padding-bottom: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#employee-left{
+    width: 500px;
+    height: 500px;
+    display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#employee-img img{
+	width: 128px;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#employee-data table{
+	background-color:rgba(68, 75, 83, 0.4);
+	border-radius: 10px;
+	margin:auto;
+	padding: 10px;
+}
+
+#employee-data table span{
+	color:white;
+	margin:10px;
+	padding-left:10px;
+	font-family:georgia;
+	font-size:22px;
+}
+
+#employee-data table tr td{
+	padding: 10px;
+}
+
+
+#employee-msg{
+    color: red;
+    display: none;
+}
 /*----------------------------------------------*/
