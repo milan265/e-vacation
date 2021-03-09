@@ -7,9 +7,9 @@
     }else{
         if($_COOKIE['login']==0){
             require_once './login.php';
-        }else if($_COOKIE['user']=='employee'){
+        }else if($_COOKIE['userType']=='employee'){
             require_once './employee.php';
-        }else if($_COOKIE['user']=='admin'){
+        }else if($_COOKIE['userType']=='admin'){
             require_once './admin.php';
         }
     }

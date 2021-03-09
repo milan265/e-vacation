@@ -1,5 +1,4 @@
 <?php
-    
     if (!defined('APP_KEY') or APP_KEY != '12345678') {
         header("Location: ./");
     }
@@ -22,10 +21,10 @@
             </div>
 
             <div>
-                <button id="btnLogin" class="button" name="btnLogin" type="button" onclick="proveraPrijave()">Prijavi se</button>
+                <button id="btnLogin" class="button" name="btnLogin" type="button" onclick="checkLogin()">Prijavi se</button>
             </div>
             <div class="message">
-                <span id="neuspesna-prijava">Korisnik sa unetim podacima ne postoji</span>
+                <span id="login-error">Korisnik sa unetim podacima ne postoji</span>
             </div>
         </form>
         
