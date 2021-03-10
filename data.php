@@ -78,7 +78,7 @@
                 "to": "2020-01-11",
                 "userId": 2,
                 "comment": "",
-                "accepted": 1,
+                "status": 1,
                 "date": "2020-01-01"
             },
             {
@@ -88,7 +88,7 @@
                 "to": "2020-01-11",
                 "userId": 3,
                 "comment": "Godišnji odmor",
-                "accepted": 0,
+                "status": 0,
                 "date": "2020-01-01"
             },
             {
@@ -98,7 +98,7 @@
                 "to": "2020-01-11",
                 "userId": 4,
                 "comment": "",
-                "accepted": 0,
+                "status": 0,
                 "date": "2020-01-02"
             }
         ]
@@ -120,7 +120,7 @@
         global $arrRequest;
         $arr = [];
         foreach($arrRequest as $req){
-            if($req->accepted == $sel){
+            if($req->status == $sel){
                 array_push($arr,$req);
             }
         }
@@ -136,6 +136,15 @@
     function sortRequestData($arr){
         usort($arr,"cmp");
         return $arr;
+    }
+
+    function setStatus($id,$newStatus){
+        global $arrRequest;
+        foreach($arrRequest as $r){
+            if($r->id == $id){
+                $r->status = $newStatus;
+            }
+        }
     }
 
 ?>

@@ -6,9 +6,9 @@
         header("Location: ./");
 	}
     if(!isset($_POST['tbEmail']) || !isset($_POST['tbPassword'])){
-			echo "Error";
-			exit();
-		}
+		echo "Error";
+		exit();
+	}
 
     $email = $_POST['tbEmail'];
 	$password = $_POST['tbPassword'];

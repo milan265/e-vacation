@@ -68,7 +68,7 @@
                 echo "<td>".$r->to."</td>";
                 echo "<td>".$r->comment."</td>";
                 echo "<td>".$r->date."</td>";
-                if($r->accepted==""){
+                if($r->status==""){
                     echo "<td>
                     <button id='btnReject' class='button' name='btnReject' type='button' onclick='reject(".$r->id.")'>Odbiti</button>
                     </td>"; 

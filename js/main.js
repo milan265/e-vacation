@@ -92,9 +92,39 @@ function confirmChoice(){
 }
 
 function accept($id){
-  console.log($id);
+  var params = "id="+$id+"&request=accept";
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST","admin_service.php",true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+      //window.location.href = "http://localhost/e-vacation/";
+      /*
+        doesn't work because I don't use a database
+      */ 
+    }
+  }; 
+
+  xhr.send(params);
 }
 
 function reject($id){
-  console.log($id);
+  var params = "id="+$id+"&request=reject";
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST","admin_service.php",true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+      //window.location.href = "http://localhost/e-vacation/";
+      /*
+        doesn't work because I don't use a database
+      */ 
+    }
+  };
+
+  xhr.send(params);
 }
