@@ -31,6 +31,7 @@
                             <div id="employee-img">
                                 <img src="./img/profile.png" alt="img">
                             </div>
+                            
                         </td>
                     </tr>
                     <?php
@@ -86,7 +87,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <button id="btnConfirmDate" class="button" name="btnConfirmDate" type="button" onclick="confirmDate(<?php echo ($user->numDaysOffOld+$user->numDaysOff);?>)">Potvrdi</button>
+                        <button id="btnConfirmDate" class="button" name="btnConfirmDate" type="button" onclick="confirmDate(<?php echo $user->id.','.$user->numDaysOffOld.','.$user->numDaysOff;?>)">Potvrdi</button>
                     </td>
                 </tr>
             </table>

@@ -26,6 +26,8 @@ function getCookie(cname) {
 
 /*----------------------------------------------*/
 
+/*LOGIN */
+
 var input = document.getElementById("login");
 if(input){
   input.addEventListener("keyup", function(event) {
@@ -72,19 +74,42 @@ function logout(){
   window.location.href = "http://localhost/e-vacation/";
 }
   
+/*----------------------------------------------*/
 
-function confirmDate(numDaysOff){
+/*EMPLOYEE */
+function confirmDate(userId,numDaysOffOld,numDaysOff){
     var fromDate = document.getElementById("fromDate").value;
     var toDate = document.getElementById("toDate").value;
+    var comment = document.getElementById("taComment").value;
 
-    if(fromDate!="" && toDate!="" && numDaysOff){
-      document.getElementById('employee-msg').style.display = "none";
+    if(fromDate!="" && toDate!="" && (numDaysOffOld + numDaysOff)){
+      var params = "userId="+userId+"&fromDate="+fromDate+"&toDate="+toDate+"&comment="+comment;
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST","employee_service.php",true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200) {
+          console.log(xhr.responseText);
+          if(xhr.responseText==1){
+            document.getElementById('employee-msg').style.display = "none";
+            window.location.href = "http://localhost/e-vacation/";
+          }else{
+            document.getElementById('employee-msg').style.display = "block";
+          }
+        }
+      };
+  
+      xhr.send(params);
     }else{
       document.getElementById('employee-msg').style.display = "block";
     }
 }
 
 
+
+/*----------------------------------------------*/
+
+/*ADMIN */
 function confirmChoice(){
   var selected = document.getElementById("admin-select").value;
   setCookie('select',selected,86400);
@@ -102,7 +127,7 @@ function accept($id){
       console.log(xhr.responseText);
       //window.location.href = "http://localhost/e-vacation/";
       /*
-        doesn't work because I don't use a database
+        doesn't work because database is not used
       */ 
     }
   }; 
@@ -121,7 +146,7 @@ function reject($id){
       console.log(xhr.responseText);
       //window.location.href = "http://localhost/e-vacation/";
       /*
-        doesn't work because I don't use a database
+        doesn't work because database is not used
       */ 
     }
   };

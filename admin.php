@@ -50,37 +50,40 @@
         <button id="btnConfirmChoice" class="button" name="btnConfirmChoice" type="button" onclick="confirmChoice()">Izaberi</button>
     </div>
 
-    <table id="admin-table">
-        <tr>
-            <th>Id korisnika</th>
-            <th>Broj dana</th>
-            <th>Datum od</th>
-            <th>Datum do</th>
-            <th>Komentar</th>
-            <th>Datum zahteva</th>
-        </tr>
-        <?php
-            foreach($tableData as $r){
-                echo "<tr>";
-                echo "<td>".$r->userId."</td>";
-                echo "<td>".$r->numOfDays."</td>";
-                echo "<td>".$r->from."</td>";
-                echo "<td>".$r->to."</td>";
-                echo "<td>".$r->comment."</td>";
-                echo "<td>".$r->date."</td>";
-                if($r->status==""){
-                    echo "<td>
-                    <button id='btnReject' class='button' name='btnReject' type='button' onclick='reject(".$r->id.")'>Odbiti</button>
-                    </td>"; 
-                    echo "<td>
-                    <button id='btnAccept' class='button' name='btnAccept' type='button' onclick='accept(".$r->id.")'>Odobriti</button>
-                    </td>"; 
-                    
+    <div id="admin-table-div">
+        <table id="admin-table">
+            <tr>
+                <th>Id korisnika</th>
+                <th>Broj dana</th>
+                <th>Datum od</th>
+                <th>Datum do</th>
+                <th>Komentar</th>
+                <th>Datum zahteva</th>
+            </tr>
+            <?php
+                foreach($tableData as $r){
+                    echo "<tr>";
+                    echo "<td>".$r->userId."</td>";
+                    echo "<td>".$r->numOfDays."</td>";
+                    echo "<td>".$r->from."</td>";
+                    echo "<td>".$r->to."</td>";
+                    echo "<td>".$r->comment."</td>";
+                    echo "<td>".$r->date."</td>";
+                    if($r->status==""){
+                        echo "<td>
+                            <button id='btnReject' class='button' name='btnReject' type='button' onclick='reject(".$r->id.")'>Odbiti</button>
+                        </td>"; 
+                        echo "<td>
+                            <button id='btnAccept' class='button' name='btnAccept' type='button' onclick='accept(".$r->id.")'>Odobriti</button>
+                        </td>"; 
+                        
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
-            }
-        ?>
-    </table>
+            ?>
+        </table>
+    </div>
+    
 </div>
 
 

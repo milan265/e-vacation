@@ -79,6 +79,7 @@
                 "userId": 2,
                 "comment": "",
                 "status": 1,
+                "finished": true,
                 "date": "2020-01-01"
             },
             {
@@ -89,6 +90,7 @@
                 "userId": 3,
                 "comment": "Godišnji odmor",
                 "status": 0,
+                "finished": true,
                 "date": "2020-01-01"
             },
             {
@@ -99,6 +101,7 @@
                 "userId": 4,
                 "comment": "",
                 "status": 0,
+                "finished": true,
                 "date": "2020-01-02"
             }
         ]
@@ -146,5 +149,16 @@
             }
         }
     }
+
+    function getMaxId(){
+        $maxId = $arrRequest[0]->id;
+        foreach($arrRequest as $r){
+            if($r->id>$maxId){
+                $maxId = $r->id;
+            }
+        }
+        return $maxId;
+    }
+
 
 ?>

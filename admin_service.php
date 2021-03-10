@@ -1,11 +1,13 @@
 <?php
     
-    include('data.php');
+    
     
     if(!isset($_POST['id'])||!isset($_POST['request'])){
 		echo "Error";
 		exit();
 	}
+
+    include('data.php');
 
     $id = $_POST['id'];
     $request = $_POST['request'];
