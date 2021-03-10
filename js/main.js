@@ -50,7 +50,6 @@ function checkLogin(){
       xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200) {
           if(xhr.responseText==1){
-              console.log("aaa");
             document.getElementById("login-error").style.display = "none";
             window.location.href = "http://localhost/e-vacation/";
           }else{
@@ -69,7 +68,7 @@ function logout(){
   setCookie("login",0,86400);
   setCookie("id",-1,-1000);
   setCookie("userType","",-1000);
-
+  setCookie("select",0,-1000);
   window.location.href = "http://localhost/e-vacation/";
 }
   
@@ -88,5 +87,14 @@ function confirmDate(numDaysOff){
 
 function confirmChoice(){
   var selected = document.getElementById("admin-select").value;
-  
+  setCookie('select',selected,86400);
+  window.location.href = "http://localhost/e-vacation/";
+}
+
+function accept($id){
+  console.log($id);
+}
+
+function reject($id){
+  console.log($id);
 }

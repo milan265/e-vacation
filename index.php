@@ -10,6 +10,9 @@
         }else if($_COOKIE['userType']=='employee'){
             require_once './employee.php';
         }else if($_COOKIE['userType']=='admin'){
+            if(!isset($_COOKIE['select'])){
+                setcookie("select", "novo", time()+86400, "/");
+            }
             require_once './admin.php';
         }
     }

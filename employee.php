@@ -58,7 +58,7 @@
                 ?>
                 <tr>
                     <td>
-                        <span>Od</span>
+                        <span>Datum početka odmora</span>
                     </td>
                     <td>
                         <input type="date" id="fromDate" name="fromDate">
@@ -66,10 +66,16 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>Do </span>
+                        <span>Datum kraja odmora </span>
                     </td>
                     <td>
                         <input type="date" id="toDate" name="toDate">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea id="taComment" name="taComment" placeholder="Dodatni komentar" rows="4" cols="50">
+                        </textarea>
                     </td>
                 </tr>
                 <tr>

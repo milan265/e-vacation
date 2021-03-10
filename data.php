@@ -20,7 +20,7 @@
                 "password": "1234",
                 "userType": "employee",
                 "name": "Pera",
-                "surname": "Peric",
+                "surname": "Perić",
                 "position": "Back-end developer",
                 "contractType": "stalno",
                 "employmentDate": "2019-05-01",
@@ -33,7 +33,7 @@
                 "password": "1234",
                 "userType": "employee",
                 "name": "Mika",
-                "surname": "Jovanovic",
+                "surname": "Jovanović",
                 "position": "Back-end developer",
                 "contractType": "stalno",
                 "employmentDate": "2020-02-13",
@@ -46,7 +46,7 @@
                 "password": "1234",
                 "userType": "employee",
                 "name": "Mara",
-                "surname": "Pekic",
+                "surname": "Pekić",
                 "position": "Front-end developer",
                 "contractType": "odredjeno",
                 "employmentDate": "2020-10-07",
@@ -59,7 +59,7 @@
                 "password": "1234",
                 "userType": "employee",
                 "name": "Zora",
-                "surname": "Zoric",
+                "surname": "Zorić",
                 "position": "Marketing",
                 "contractType": "stalno",
                 "employmentDate": "2020-09-22",
@@ -77,9 +77,29 @@
                 "from": "2020-01-05",
                 "to": "2020-01-11",
                 "userId": 2,
-                "status": "neaktivan",
                 "comment": "",
-                "accepted": true
+                "accepted": 1,
+                "date": "2020-01-01"
+            },
+            {
+                "id": 2,
+                "numOfDays": 5,
+                "from": "2020-01-05",
+                "to": "2020-01-11",
+                "userId": 3,
+                "comment": "Godišnji odmor",
+                "accepted": 0,
+                "date": "2020-01-01"
+            },
+            {
+                "id": 3,
+                "numOfDays": 5,
+                "from": "2020-01-05",
+                "to": "2020-01-11",
+                "userId": 4,
+                "comment": "",
+                "accepted": 0,
+                "date": "2020-01-02"
             }
         ]
     ';
@@ -94,6 +114,28 @@
                return $user; 
             }
         }
+    }
+
+    function getRequestData($sel){
+        global $arrRequest;
+        $arr = [];
+        foreach($arrRequest as $req){
+            if($req->accepted == $sel){
+                array_push($arr,$req);
+            }
+        }
+        $arr = sortRequestData($arr);
+        return $arr;
+    }
+
+
+    function cmp($a, $b) {
+        return strcmp($b->date, $a->date);
+    }
+
+    function sortRequestData($arr){
+        usort($arr,"cmp");
+        return $arr;
     }
 
 ?>
